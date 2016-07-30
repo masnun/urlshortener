@@ -3,7 +3,6 @@ classes
 .idea
 gradlew
 gradlew.bat
-gradle
 .gradle
 
 .DS_Store
