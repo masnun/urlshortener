@@ -18,6 +18,11 @@ jar {
     baseName = 'urlshortener'
     version = '0.0.1-SNAPSHOT'
 }
+
+springBoot {
+    mainClass = "com.masnun.UrlshortenerApplication"
+}
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 

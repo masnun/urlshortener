@@ -4,5 +4,7 @@ classes
 gradlew
 gradlew.bat
 gradle
+.gradle
 
 .DS_Store
+
