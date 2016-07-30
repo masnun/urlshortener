@@ -1,7 +1,6 @@
 build
 classes
 .idea
-gradlew
 gradlew.bat
 .gradle
 
