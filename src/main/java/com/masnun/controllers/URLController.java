@@ -4,26 +4,33 @@ import com.masnun.domain.URL;
 import com.masnun.repository.URLRepository;
 import com.masnun.utils.Base62;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.HashMap;
 
 @Controller
 public class URLController {
 
     @Autowired
-    URLRepository urlRepository;
+    private URLRepository urlRepository;
+
+    @Value("${app.url}")
+    private String applicationURL;
+
 
     @RequestMapping("/")
-    public String index() {
-        return "Home";
+    public String index(Model model) {
+        model.addAttribute("baseUrl", applicationURL);
+        return "index";
     }
 
     @RequestMapping(value = "/shorten", method = RequestMethod.POST)
-    public
     @ResponseBody
-    String shorten(@RequestParam String url) {
+    public HashMap<String, String> shorten(@RequestParam String url) {
         URL urlObj = new URL();
         urlObj.setUrl(url);
         urlObj.setCreated_at(new Date());
@@ -32,7 +39,12 @@ public class URLController {
 
         Long urlId = urlObj.getId();
 
-        return Base62.fromBase10(urlId);
+        String shortURL = applicationURL + "/r" + Base62.fromBase10(urlId);
+
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put("url", shortURL);
+
+        return hashMap; // ;
 
     }
 
