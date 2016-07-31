@@ -11,7 +11,7 @@ public class URL {
     private Long id;
 
     private String url;
-    
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date created_at;
 

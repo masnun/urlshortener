@@ -114,7 +114,7 @@
                 return false;
             }
 
-            $.post("http://localhost:8080/shorten/", {"url": url}, function (response) {
+            $.post("/shorten/", {"url": url}, function (response) {
                 if (response.url) {
 
                     $("#shortUrl").html(response.url);
