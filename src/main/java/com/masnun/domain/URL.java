@@ -10,6 +10,7 @@ public class URL {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(columnDefinition = "TEXT")
     private String url;
 
     @Column(columnDefinition = "DATETIME")
