@@ -114,7 +114,7 @@
                 return false;
             }
 
-            $.post("http://localhost:8080/shorten/", {"url": url}, function (response) {
+            $.post("/shorten/", {"url": url}, function (response) {
                 if (response.url) {
 
                     $("#shortUrl").html(response.url);
@@ -163,6 +163,15 @@
 
         </div>
 
+    </div>
+
+    <div class="row">
+        <h4>Do you like Open Source?</h4>
+
+        <p>We do too. The code is now on Github. You can find it here -
+            <a href="https://github.com/masnun/urlshortener">https://github.com/masnun/urlshortener</a>.
+            I encourage your feedback :)
+        </p>
     </div>
 
 
