@@ -2,7 +2,7 @@
 
 It's a Spring Boot project that provides basic url shortening service. You can find a demo app running here:
 
-<a href="https://github.com/masnun/urlshortener">https://github.com/masnun/urlshortener</a>
+<a href="https://sburl.herokuapp.com">https://sburl.herokuapp.com</a>
 
 <br/><br/>
 
