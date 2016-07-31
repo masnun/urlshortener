@@ -11,8 +11,7 @@ public class URL {
     private Long id;
 
     private String url;
-
-    @Column(columnDefinition = "DATETIME")
+    
     @Temporal(TemporalType.TIMESTAMP)
     private Date created_at;
 
